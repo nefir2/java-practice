@@ -38,9 +38,7 @@ public class GameField {
 	}
 
 	private static void createInitialCells() {
-		for (int i = 0; i < COUNT_INITIAL_CELLS; i++) {
-			generateNewCell();
-		}
+		for (int i = 0; i < COUNT_INITIAL_CELLS; i++) generateNewCell();
 	}
 	private static void generateNewCell() {
 		int state = (new Random().nextInt(100) <= Constants.CHANCE_OF_LUCKY_SPAWN) ? LUCKY_INITIAL_CELL_STATE : INITIAL_CELL_STATE;
@@ -72,5 +70,11 @@ public class GameField {
 			}
 		}
 		score += state;
+	}
+
+	private static void input() {
+		keyboardModule.update();
+		direction = keyboardModule.lastDirectionKeyPressed();
+		endOfGame = endOfGame || graphicsModule.isCloseRequseted() || keyboardModule.wasEscPressed();
 	}
 }

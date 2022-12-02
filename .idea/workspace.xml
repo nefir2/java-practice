@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ea23e97-efcf-41b1-ae1c-d9255a89f4ce" name="Changes" comment="idk">
+    <list default="true" id="6ea23e97-efcf-41b1-ae1c-d9255a89f4ce" name="Changes" comment="input">
+      <change afterPath="$PROJECT_DIR$/src/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GraphicsModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/KeyboardHandleModule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled.iml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -26,7 +34,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2IJ993hlYB7sFOIEB9RPd1OPxYW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,7 +45,12 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/home/user/IdeaProjects/untitled/lwjgl-2.9.3",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -61,11 +76,19 @@
       <option name="project" value="LOCAL" />
       <updated>1669893725722</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="input">
+      <created>1669893981811</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669893981811</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="idk" />
-    <option name="LAST_COMMIT_MESSAGE" value="idk" />
+    <MESSAGE value="input" />
+    <option name="LAST_COMMIT_MESSAGE" value="input" />
   </component>
 </project>

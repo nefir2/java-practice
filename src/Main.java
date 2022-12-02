@@ -1,6 +1,11 @@
 import java.util.Random;
 
 public class Main() {
+	private static class ShiftRowResult {
+		boolean didAnythingMove;
+		int[] shiftedRow;
+	}
+
 	public static void main(String[] args) {
 		initFields();
 		createInitialCells();
@@ -13,6 +18,8 @@ public class Main() {
 
 		graphicsModule.destroy();
 	}
+
+
 	private static void createInitialCells() {
 		for (int i = 0; i < COUNT_INITIAL_CELLS; i++) generateNewCell();
 	}
@@ -86,7 +93,44 @@ public class Main() {
 						result.shiftedRow = tmp;
 					}
 					gameField.setColumn(i, result.shiftRow);
+
+					ret = ret || result.didAnythingMove;
 				}
+				break;
+			case LEFT:
+			case RIGHT:
+				for (int i = 0; i < Constants.COUNT_CELLS_Y; i++) {
+					int[] arg = gameField.getLine(i);
+
+					if (direction == Direction.RIGHT){
+						int[] tmp = new int[arg.length];
+						for (int e = 0; e < tmp.length; e++) {
+							tmp[e] = arg[tmp.length - e - 1];
+						}
+						arg = tmp;
+					}
+
+					ShiftRowResult result = shiftRow(arg);
+
+					if (direction == Direction.RIGHT) {
+						int[] tmp = new int[result.shiftedRow.length];
+						for (int e = 0; e < tmp.length; e++) {
+							tmp[e] = result.shiftedRow[tmp.length - e - 1];
+						}
+						result.shiftedRow = tmp;
+					}
+
+					gameField.setLine(i, result.shiftedRow);
+
+					ret = ret || result.didAnythingMove;
+				}
+				break;
+			default:
+				ErrorCatcher.shiftFailureWrongParam();
+				break;
 		}
+		return ret;
 	}
+
+
 }

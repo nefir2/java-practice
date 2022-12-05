@@ -19,7 +19,6 @@ public class Main() {
 		graphicsModule.destroy();
 	}
 
-
 	private static void createInitialCells() {
 		for (int i = 0; i < COUNT_INITIAL_CELLS; i++) generateNewCell();
 	}
@@ -132,5 +131,44 @@ public class Main() {
 		return ret;
 	}
 
+	private static ShiftRowResult shiftRow(int[] oldRow) {
+		ShiftRowResult ret = new ShiftRowResult();
 
+		int[] oldRowWithoutZeroes = new int[oldRow.length];
+		{
+			int q = 0;
+
+			for (int i = 0; i < oldRow.length; i++) {
+				if (oldRow[i] != 0) {
+					if (q != i) ret.didAnythingMove = true;
+					oldRowWithoutZeroes[q] = oldRow[i];
+					q++;
+				}
+			}
+		}
+		ret.shiftedRow = new int[oldRowWithoutZeroes.length];
+		{
+			int q = 0;
+			{
+				int i = 0;
+				while (i < oldRowWithoutZeroes.length) {
+					if (
+						(i + 1 < oldRowWithoutZeroes.length) && (
+						oldRowWithoutZeroes[i] == oldRowWithoutZeroes[i + 1]) &&
+						(oldRowWithoutZeroes[i] != 0)
+					) { //здесь была лишняя фигурная скобка, которая ломала код. даже когда я скопировал код сюда, ошибка осталась.
+						ret.didAnythingMove = true;
+						ret.shiftedRow[q] = oldRowWithoutZeroes[i] * 2;
+						i++;
+					}
+					else {
+						ret.shiftedRow[q] = oldRowWithoutZeroes[i];
+					}
+					q++;
+					i++;
+				}
+			}
+		}
+		return ret;
+	}
 }

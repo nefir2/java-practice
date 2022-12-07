@@ -22,6 +22,9 @@ public class Main() {
 	private static void createInitialCells() {
 		for (int i = 0; i < COUNT_INITIAL_CELLS; i++) generateNewCell();
 	}
+	
+	//безумие, а не код... //пришлось его читаемость поправлять, но мало чем помогло...
+	
 	private static void generateNewCell() {
 		int state = (new Random().nextInt(100) <= Constants.CHANCE_OF_LUCKY_SPAWN) ? LUCKY_INITIAL_CELL_STATE : INITIAL_CELL_STATE;
 		int randomX, randomY;
@@ -34,7 +37,6 @@ public class Main() {
 
 		boolean placed = false;
 
-		//безумие, а не код... //пришлось его читаемость поправлять, но мало чем помогло...
 		while (!placed){
 			if (gameField.getState(currentX, currentY) == 0) {
 				gameField.setState(currentX, currentY, state);
@@ -156,7 +158,7 @@ public class Main() {
 						(i + 1 < oldRowWithoutZeroes.length) && (
 						oldRowWithoutZeroes[i] == oldRowWithoutZeroes[i + 1]) &&
 						(oldRowWithoutZeroes[i] != 0)
-					) { //здесь была лишняя фигурная скобка, которая ломала код. даже когда я скопировал код сюда, ошибка осталась.
+					) { 
 						ret.didAnythingMove = true;
 						ret.shiftedRow[q] = oldRowWithoutZeroes[i] * 2;
 						i++;
